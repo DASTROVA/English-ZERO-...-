@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b1b">
+  <meta name="description" content="ENGLISH ZERO — DASTROVA STUDIO. Ingliz tilini interaktiv darslar va testlar orqali o‘rganing.">
+  <meta name="color-scheme" content="dark">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>ENGLISH ZERO | DASTROVA STUDIO</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="app-locked">
+  <div class="page-loader" id="pageLoader" aria-label="Yuklanmoqda">
+    <div class="loader-mark">E<span>Z</span></div>
+    <div class="loader-line"><i></i></div>
+    <small>ENGLISH ZERO · DASTROVA STUDIO</small>
+  </div>
+  <section id="welcomeScreen" class="welcome-screen">
+    <div class="welcome-photo"></div>
+    <div class="welcome-card">
+      <div class="welcome-brand"><span class="brand-mark">E<span>Z</span></span><span><b>ENGLISH ZERO</b><small>DASTROVA STUDIO</small></span></div>
+      <div class="welcome-illustration" aria-hidden="true"><span class="welcome-orb orb-one">📚</span><span class="welcome-orb orb-two">🌍</span><span class="welcome-orb orb-three">✨</span><div class="welcome-book">ABC</div></div>
+      <span class="eyebrow">YOUR ENGLISH ADVENTURE STARTS HERE</span>
+      <h1>Assalomu alaykum! <span>👋</span></h1>
+      <p class="welcome-subtitle">O‘rganishni boshlash uchun ismingizni kiriting.</p>
+      <form id="welcomeForm" class="welcome-form">
+        <label for="studentName">Ismingiz</label><input id="studentName" name="studentName" type="text" placeholder="Ismingiz" maxlength="30" autocomplete="given-name" required>
+        <input id="studentGrade" name="studentGrade" type="hidden" value="1">
+        <button class="primary-btn welcome-submit" type="submit">🚀 Darslarni boshlash</button>
+      </form>
+      <div class="welcome-teacher">👩‍🏫 Teacher <b>KOBILOVA RAVSHANOY</b></div>
+      <small class="welcome-footnote">1-sinf uchun · Learn • Play • Grow</small>
+    </div>
+  </section>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="English Zero bosh sahifa">
+      <span class="brand-mark">E<span>Z</span></span>
+      <span><b>ENGLISH ZERO</b><small>DASTROVA STUDIO</small></span>
+    </a>
+    <button id="soundToggle" class="icon-btn" aria-label="Ovoz">🔊</button>
+  </header>
+
+  <main>
+    <section id="homeView" class="view active">
+      <section class="hero glass">
+        <div class="hero-copy">
+          <span class="eyebrow">✨ LEARN • PLAY • GROW</span>
+          <h1><span id="personalGreeting">Englishni o‘yin orqali o‘rgan!</span></h1>
+          <p id="personalSubheading">Alifbo, ranglar, mevalar va boshqa ilk inglizcha so‘zlarni o‘yin orqali o‘rganamiz.</p>
+          <div class="hero-actions">
+            <button class="primary-btn" id="startLearning">🚀 O‘qishni boshlash</button>
+            <button class="secondary-btn" id="showProgress">🏆 Natijalarim</button>
+          </div>
+          <div class="teacher-line">👩‍🏫 Teacher: <b>KOBILOVA RAVSHANOY</b></div>
+        </div>
+        <div class="hero-art" aria-label="Kitoblar va o‘quv qurollari">
+          <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+          <div class="floating-emoji book">📚</div><div class="floating-emoji apple">🍎</div>
+          <div class="floating-emoji star">⭐</div><div class="floating-emoji globe">🌍</div>
+          <div class="hero-core"><span>ABC</span><small>LET'S LEARN!</small></div>
+        </div>
+      </section>
+
+      <section class="section-heading">
+        <div><span class="eyebrow">SENING O‘QUV OLAMING</span><h2>1-sinf uchun darslar</h2></div>
+        <span class="section-note">Faqat 1-sinf</span>
+      </section>
+      <div id="gradeGrid" class="grade-grid"></div>
+
+      <section class="section-heading topic-heading">
+        <div><span class="eyebrow">MAVZUNI TANLA</span><h2>O‘rganish uchun mavzular</h2></div>
+      </section>
+      <div id="featuredTopics" class="topic-grid"></div>
+    </section>
+
+    <section id="lessonView" class="view">
+      <button class="back-btn" id="backHome">← Bosh sahifa</button>
+      <div class="lesson-head glass">
+        <div><span class="eyebrow" id="gradeEyebrow">GRADE 1</span><h1 id="gradeTitle">1-sinf darslari</h1><p id="gradeDescription">Ingliz tilini qiziqarli usulda o‘rganamiz.</p></div>
+        <div class="grade-big-icon" id="gradeBigIcon">🌱</div>
+      </div>
+      <div class="mode-panel glass">
+        <div><h3>Qiyinlik darajasi</h3><p>O‘zingizga mos rejimni tanlang.</p></div>
+        <div class="mode-buttons" id="modeButtons">
+          <button class="mode-btn selected" data-mode="easy">🟢 Easy</button>
+          <button class="mode-btn" data-mode="medium">🟡 Medium</button>
+          <button class="mode-btn" data-mode="hard">🔴 Hard</button>
+        </div>
+      </div>
+      <div class="section-heading"><div><span class="eyebrow">LESSON LIBRARY</span><h2>Mavzular</h2></div><span class="section-note" id="topicCount"></span></div>
+      <div id="topicGrid" class="topic-grid"></div>
+    </section>
+
+    <section id="quizView" class="view">
+      <button class="back-btn" id="backLessons">← Mavzularga qaytish</button>
+      <div class="quiz-shell glass">
+        <div class="quiz-top"><span class="pill" id="quizTopic">GREETING</span><span class="quiz-count" id="quizCount">1 / 5</span></div>
+        <div class="progress-track"><div id="quizProgress" class="progress-fill"></div></div>
+        <div class="quiz-image" id="quizImage"><img alt="Savol rasmi" /></div>
+        <h2 id="quizQuestion">Choose the correct answer</h2>
+        <p id="quizHint" class="quiz-hint">To‘g‘ri javobni tanlang.</p>
+        <div id="answerGrid" class="answer-grid"></div>
+        <div id="feedback" class="feedback" aria-live="polite"></div>
+        <button id="nextQuestion" class="primary-btn next-btn" disabled>Keyingi savol →</button>
+      </div>
+    </section>
+
+    <section id="resultView" class="view">
+      <div class="result-card glass">
+        <div class="result-trophy" id="resultEmoji">🏆</div>
+        <span class="eyebrow">LESSON COMPLETE</span>
+        <h1 id="resultTitle">Ajoyib!</h1>
+        <p id="resultText">Darsni yakunladingiz.</p>
+        <div class="result-stats">
+          <div><strong id="resultScore">0/5</strong><span>To‘g‘ri javob</span></div>
+          <div><strong id="resultPercent">0%</strong><span>Natija</span></div>
+          <div><strong id="resultStars">⭐</strong><span>Yulduzlar</span></div>
+        </div>
+        <article id="certificate" class="certificate" aria-label="Rag‘batnoma"><div class="certificate-inner"><div class="certificate-topline">ENGLISH ZERO · DASTROVA STUDIO</div><div class="certificate-medal">🏅</div><div class="certificate-kicker">RAG‘BATNOMA</div><h2>MUVAFFAQIYAT UCHUN</h2><p class="certificate-intro">Ushbu rag‘batnoma quyidagi o‘quvchiga taqdim etiladi:</p><div id="certificateName" class="certificate-name">O‘quvchi ismi</div><p id="certificateGrade" class="certificate-grade">1-sinf</p><p class="certificate-copy">Ingliz tili testini yakunlab, bilim va intilishini namoyon etgani uchun.</p><div class="certificate-score"><span>Natija</span><strong id="certificatePercent">0%</strong><span id="certificateTopic">Greeting</span></div><div class="certificate-footer"><div><span class="signature-line">RAVSHANOY KABILOVA</span><small>Rag‘batnoma beruvchi</small></div><div class="certificate-seal">EXCELLENT<br><b>★</b><br>AWARD</div></div><div id="certificateDate" class="certificate-date"></div></div></article><div class="result-actions"><button class="primary-btn" id="printCertificate">🖨️ Rag‘batnomani chop etish / PDF</button><button class="secondary-btn" id="retryQuiz">🔁 Qayta o‘ynash</button><button class="secondary-btn" id="resultLessons">📚 Boshqa mavzu</button></div>
+      </div>
+    </section>
+
+    <section id="progressView" class="view">
+      <button class="back-btn" id="progressBack">← Bosh sahifa</button>
+      <div class="lesson-head glass"><div><span class="eyebrow">YOUR ACHIEVEMENTS</span><h1>Natijalarim 🏆</h1><p>O‘rganganlaringizni shu yerda kuzating.</p></div><div class="grade-big-icon">⭐</div></div>
+      <div class="progress-summary">
+        <div class="stat-card glass"><span>⭐</span><strong id="totalPoints">0</strong><small>Jami ball</small></div>
+        <div class="stat-card glass"><span>✅</span><strong id="completedLessons">0</strong><small>Tugallangan test</small></div>
+        <div class="stat-card glass"><span>🎯</span><strong id="bestPercent">0%</strong><small>Eng yaxshi natija</small></div>
+      </div>
+      <div class="glass history-card"><h2>Oxirgi natijalar</h2><div id="historyList" class="history-list"></div><button id="clearProgress" class="text-btn">Natijalarni tozalash</button></div>
+    </section>
+  </main>
+
+  <footer><div class="footer-brand">✨ ENGLISH ZERO</div><p>1-sinf · Teacher KOBILOVA RAVSHANOY</p><p>© 2026 DASTROVA STUDIO</p></footer>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
