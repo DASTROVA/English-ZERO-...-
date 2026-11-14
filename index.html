@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#38a9f4">
+  <title>English Zero — 1-sinf</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="sky sky-one"></div>
+  <div class="sky sky-two"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#" id="brandHome" aria-label="Bosh sahifa">
+      <span class="brand-icon">📘</span>
+      <span>ENGLISH <b>ZERO</b><small>1-SINF • KIDS ENGLISH</small></span>
+    </a>
+    <div class="top-actions">
+      <div class="star-pill">⭐ <span id="topStars">0</span></div>
+      <button class="round-btn" id="soundToggle" title="Ovoz">🔊</button>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <!-- WELCOME -->
+    <section class="screen welcome-screen active" id="welcomeScreen">
+      <div class="welcome-art">
+        <div class="sun-face">☀️</div>
+        <div class="cloud cloud-a"></div><div class="cloud cloud-b"></div>
+        <div class="welcome-boy">🧒🏻</div>
+        <div class="welcome-book">📚</div>
+        <div class="welcome-grass"></div>
+      </div>
+      <div class="welcome-copy">
+        <span class="eyebrow">HELLO, LITTLE LEARNER!</span>
+        <h1>ENGLISH <span>1st Grade</span></h1>
+        <p>Ingliz tilini o‘yinlar va rasmlar bilan birga o‘rganamiz!</p>
+        <label for="studentName">Ismingizni kiriting</label>
+        <input id="studentName" maxlength="24" autocomplete="given-name" placeholder="Masalan: Alex">
+        <button class="primary-btn big-btn" id="startButton">Boshlash <span>🚀</span></button>
+        <small class="welcome-note">⭐ O‘rganamiz • O‘ynaymiz • Yulduz yig‘amiz</small>
+      </div>
+    </section>
+
+    <!-- HOME -->
+    <section class="screen" id="homeScreen">
+      <div class="hello-row">
+        <div>
+          <span class="eyebrow">BUGUNGI DARSIMIZ</span>
+          <h1>Salom, <span id="displayName">Do‘stim</span>! 👋</h1>
+          <p>Qaysi mavzuni o‘rganamiz?</p>
+        </div>
+        <div class="mascot">🦊</div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card"><span>⭐</span><div><strong id="totalStars">0</strong><small>Yulduzlar</small></div></div>
+        <div class="stat-card"><span>🏆</span><div><strong id="completedLessons">0</strong><small>Tugatilgan test</small></div></div>
+        <div class="stat-card"><span>🎯</span><div><strong id="bestScore">0%</strong><small>Eng yaxshi natija</small></div></div>
+      </div>
+
+      <div class="section-heading">
+        <div><span class="eyebrow">LEARNING WORLD</span><h2>O‘rganish mavzulari</h2></div>
+        <span class="tiny-badge">10 ta mavzu</span>
+      </div>
+      <div class="topic-grid" id="topicGrid"></div>
+
+      <div class="bottom-panels">
+        <div class="progress-panel">
+          <div class="panel-icon">🌈</div>
+          <div><h3>Har kuni oz-ozdan!</h3><p>Har bir test seni ingliz tiliga yaqinlashtiradi.</p></div>
+        </div>
+        <div class="history-panel">
+          <div class="section-heading compact"><h2>Oxirgi natijalar</h2><span>📖</span></div>
+          <div id="historyList" class="history-list"><p class="empty-history">Hali test ishlanmadi. Birinchi darsni boshlang!</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LESSON SETUP -->
+    <section class="screen" id="lessonScreen">
+      <button class="back-btn" data-home>← Bosh sahifa</button>
+      <div class="lesson-hero">
+        <div class="lesson-mascot" id="lessonEmoji">🐶</div>
+        <div><span class="eyebrow">YANGI DARS</span><h1 id="lessonTitle">Animals</h1><p id="lessonDescription">Hayvonlar nomini o‘rganamiz</p></div>
+      </div>
+
+      <div class="setup-card">
+        <h2>Qiyinlik darajasini tanlang</h2>
+        <div class="level-grid">
+          <button class="level-btn easy selected" data-level="easy"><span>⭐</span><b>Oson</b><small>Easy</small></button>
+          <button class="level-btn medium" data-level="medium"><span>🚀</span><b>O‘rtacha</b><small>Medium</small></button>
+          <button class="level-btn hard" data-level="hard"><span>🏆</span><b>Qiyin</b><small>Hard</small></button>
+        </div>
+
+        <label class="count-label" for="questionCount">Nechta savol ishlaysiz?</label>
+        <select id="questionCount" class="count-select">
+          <option value="10">10 ta savol</option>
+          <option value="20">20 ta savol</option>
+          <option value="25">25 ta savol</option>
+        </select>
+        <p class="option-note">Har bir savolda 4 ta javob varianti bo‘ladi.</p>
+        <button class="primary-btn start-quiz-btn" id="beginQuiz">Testni boshlash 🚀</button>
+      </div>
+      <div class="tip-card">💡 <b>Maslahat:</b> Avval rasmga qarang, keyin to‘g‘ri inglizcha so‘zni tanlang.</div>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="screen" id="quizScreen">
+      <div class="quiz-top">
+        <button class="back-btn" data-back>← Chiqish</button>
+        <div class="quiz-progress-wrap">
+          <div class="progress-label"><span id="progress">1 / 10</span><b id="scoreLive">⭐ 0</b></div>
+          <div class="progress-track"><div id="progressFill"></div></div>
+        </div>
+        <button class="round-btn" id="quizSound" title="So‘zni eshitish">🔊</button>
+      </div>
+
+      <div class="question-card">
+        <span class="eyebrow">LOOK AND CHOOSE</span>
+        <div class="question-picture" id="questionPicture">🐱</div>
+        <h1 id="questionText">What is this?</h1>
+        <p id="questionHint">To‘g‘ri javobni tanlang</p>
+        <div class="answer-grid" id="answerGrid"></div>
+        <div class="feedback" id="answerFeedback" aria-live="polite"></div>
+      </div>
+      <div class="quiz-footer">
+        <button class="hint-btn" id="hintButton">💡 Yordam</button>
+        <button class="primary-btn next-btn hidden" id="nextQuestion">Keyingi →</button>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="screen" id="resultScreen">
+      <div class="result-card">
+        <div class="confetti">🎉 ⭐ 🎊</div>
+        <div class="trophy">🏆</div>
+        <span class="eyebrow">TEST YAKUNLANDI</span>
+        <h1 id="resultMessage">Ajoyib!</h1>
+        <div class="score-circle"><strong id="resultScore">0%</strong><small>Natijangiz</small></div>
+        <div class="result-stats">
+          <div><strong id="resultCorrect">0</strong><small>To‘g‘ri</small></div>
+          <div><strong id="resultTotal">10</strong><small>Jami savol</small></div>
+          <div><strong id="resultStars">0</strong><small>Yulduz</small></div>
+        </div>
+        <div class="result-actions">
+          <button class="secondary-btn" id="reviewButton">📖 Javoblarni ko‘rish</button>
+          <button class="primary-btn" id="retryButton">🔄 Qayta ishlash</button>
+          <button class="home-btn" data-home>🏠 Bosh sahifa</button>
+        </div>
+      </div>
+      <div id="reviewList" class="review-list hidden"></div>
+    </section>
+
+    <footer>Made with 💙 for little learners <span>ENGLISH ZERO</span></footer>
+  </main>
+
+  <div class="toast" id="toast" role="status"></div>
+</body>
+</html>
